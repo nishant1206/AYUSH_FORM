@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="brand">AYUSH STARTUP REGISTERATION</a>
+        </div>
+    </nav>
+
+    <!-- Form Container -->
+    <div class="container form-container">
+        <!-- Page Counter -->
+        <div class="page-counter">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <!-- Page 1 -->
+        <form id="multiStepForm">
+            <div class="form-page" id="page1">
+                <h2>Facility Information</h2>
+                <label for="institutionName">Name of Institution</label>
+                <input type="text" id="institutionName" name="institutionName" required>
+
+                <label for="facilityType">Type of Facility</label>
+                <input type="text" id="facilityType" name="facilityType" required>
+
+                <label for="facilityAddress">Address of Facility</label>
+                <input type="text" id="facilityAddress" name="facilityAddress" required>
+
+                <label for="contactNo">Contact No.</label>
+                <input type="text" id="contactNo" name="contactNo" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Page 2 -->
+            <div class="form-page" id="page2" style="display:none;">
+                <h2>Startup Details</h2>
+                <label for="establishmentDate">Date of Establishment</label>
+                <input type="date" id="establishmentDate" name="establishmentDate" required>
+
+                <label for="registrationNo">Registration Number of Startup</label>
+                <input type="text" id="registrationNo" name="registrationNo" required>
+
+                <label for="ownershipType">Type of Ownership</label>
+                <select id="ownershipType" name="ownershipType" required>
+                    <option value="Owner">Owner</option>
+                    <option value="Chief Executive">Chief Executive</option>
+                    <option value="Stakeholder">Stakeholder</option>
+                </select>
+
+                <h3>Details of Operational Unit</h3>
+                <label for="servicesOffered">Services Offered</label>
+                <textarea id="servicesOffered" name="servicesOffered" rows="4"></textarea>
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Page 3 -->
+            <div class="form-page" id="page3" style="display:none;">
+                <h2>NABH Accreditation Details</h2>
+                <h3>Accreditation Information</h3>
+                <label for="nabhCertificateId">Accreditation Certificate ID</label>
+                <input type="text" id="nabhCertificateId" name="nabhCertificateId" required>
+
+                <label for="branch">Branch</label>
+                <input type="text" id="branch" name="branch" required>
+
+                <label for="nabhRegNo">NABH Registration Number</label>
+                <input type="text" id="nabhRegNo" name="nabhRegNo" required>
+
+                <label for="nabhCertificateUpload">NABH Accreditation Certificate</label>
+                <input type="file" id="nabhCertificateUpload" name="nabhCertificateUpload" accept="image/*" required>
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Page 4 -->
+            <div class="form-page" id="page4" style="display:none;">
+                <h2>Legal Documents</h2>
+                <label for="aadharNumber">Aadhar Card Number</label>
+                <input type="text" id="aadharNumber" name="aadharNumber" required>
+
+                <label for="aadharUpload">Upload Aadhar Card Copy</label>
+                <input type="file" id="aadharUpload" name="aadharUpload" accept="image/*" required>
+
+                <label for="gstinNumber">GSTIN Number</label>
+                <input type="text" id="gstinNumber" name="gstinNumber" required>
+
+                <label for="panNumber">Pan Card Number</label>
+                <input type="text" id="panNumber" name="panNumber" required>
+
+                <label for="panUpload">Upload PAN</label>
+                <input type="file" id="panUpload" name="panUpload" accept="image/*" required>
+
+                <label for="panUpload">Upload AIIA Certificate</label>
+                <input type="file" id="AIIACertificateUpload" name="AIIACertificateUpload" accept="image/*" required>
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Page 5 -->
+            <div class="form-page" id="page5" style="display:none;">
+                <h2>Authorized Person Details</h2>
+                <h3>Add Authorized Person Details</h3>
+                <table id="authorizedPersonsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Mobile Number</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="authPersonName[]" required></td>
+                            <td><input type="text" name="authPersonDesignation[]" required></td>
+                            <td><input type="text" name="authPersonMobile[]" required></td>
+                            <td><input type="email" name="authPersonEmail[]" required></td>
+                            <td><button type="button" class="remove-btn">Remove</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" id="addRowBtn">Add New Person</button>
+
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JS -->
+    <script src="script2.js"></script>
+
+</body>
+</html>
